@@ -16,7 +16,7 @@ My choice for setting up the database was Docker.
 `docker kill my-postgres`
 
 **Start an existing container.**  
-without logs: `docker start my-postgres`
+without logs: `docker start my-postgres`  
 with logs: `docker start -a my-postgres`
 
 **List all running containers.**  
