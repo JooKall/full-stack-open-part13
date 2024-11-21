@@ -1,37 +1,31 @@
-const bcrypt = require('bcrypt')
-const usersRouter = require('express').Router()
-const User = require('../models/user')
+const router = require('express').Router()
 
-usersRouter.get('/', async (request, response) => {
-  const users = await User
-    .find({}).populate('blogs', { url: 1, title: 1, author: 1 })
+const { User, Blog } = require('../models')
 
-  response.json(users)
-})
-
-usersRouter.post('/', async (request, response) => {
-  const { username, name, password } = request.body
-
-  if (!password) {
-    return response.status(400).json({ error: 'password is required' })
-  }
-
-  if (password.length < 3) {
-    return response.status(400).json({ error: 'password is too short' })
-  }
-
-  const saltRounds = 10
-  const passwordHash = await bcrypt.hash(password, saltRounds)
-
-  const user = new User({
-    username,
-    name,
-    passwordHash,
+router.get('/', async (req, res) => {
+  const users = await User.findAll({
+    include: {
+      model: Blog,
+      attributes: { exclude: ['userId'] },
+    },
   })
-
-  const savedUser = await user.save()
-
-  response.status(201).json(savedUser)
+  res.json(users)
 })
 
-module.exports = usersRouter
+router.post('/', async (req, res) => {
+  const user = await User.create(req.body)
+  res.json(user)
+})
+
+const userFinder = async (req, res, next) => {
+  req.user = await User.findOne({ where: { username: req.params.username } })
+  next()
+}
+
+router.put('/:username', userFinder, async (req, res) => {
+  req.user.name = req.body.name
+  await req.user.save()
+  res.json(req.user)
+})
+
+module.exports = router

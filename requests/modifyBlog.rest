@@ -1,9 +1,6 @@
-PUT http://localhost:3003/api/blogs/66fe8a67870576b0ecf6f76e
+PUT http://localhost:3003/api/blogs/1
 Content-Type: application/json
 
 {
-  "title": "Testing modifying",
-  "author": "John Doe",
-  "url": "www.fullstackopen.com",
-  "likes": 8
+  "likes": 3
 }
