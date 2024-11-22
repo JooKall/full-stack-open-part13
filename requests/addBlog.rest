@@ -3,8 +3,8 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3RAcm9vdC5jb20iLCJpZCI6MiwiaWF0IjoxNzMyMTk4MDU3fQ.KLttg_xuJvFVnItN_SHWY8IgzxuixOLo5j-1ycNYETM
 
 {
-  "title": "Testing authorization 2",
-  "author": "John Doe",
+  "title": "Title",
+  "author": "Test",
   "url": "www.fullstackopen.com",
   "likes": 3
 }
