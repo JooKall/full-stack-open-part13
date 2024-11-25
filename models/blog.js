@@ -27,7 +27,6 @@ Blog.init(
     },
     year: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       validate: {
         customValidator(value) {
           const currentYear = new Date().getFullYear()
