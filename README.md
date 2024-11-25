@@ -9,7 +9,7 @@ My choice for setting up the database was Docker.
 **Use the `postgres` user to connect to the default database.**  
 `docker exec -it my-postgres psql -U postgres postgres`
 
-**Create a .env file and add the database connection string to it.**  
+**Create a .env file and add the database connection string and secret to it.**   
 `DATABASE_URL=postgres://postgres:mysecretpassword@localhost:5432/postgres`  
 `SECRET=<yoursecrethere>`
 
