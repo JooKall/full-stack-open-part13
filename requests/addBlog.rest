@@ -1,9 +1,9 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3RAcm9vdC5jb20iLCJpZCI6MSwiaWF0IjoxNzMyNTM4NTUxfQ.DUoeOhRmFwgQyTrFE3BcfirckFjdBxm_rjBrykchA60
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QyQHJvb3QuY29tIiwiaWQiOjIsImlhdCI6MTczMjYyMTcwNn0.a6ebzlERszX2DyEM79l7DmpB3-aYnvKMgnIsd9fSbyc
 
 {
-  "title": "Test",
+  "title": "Test 4",
   "author": "Test Author",
   "url": "www.fullstackopen.com",
   "likes": 8,
